@@ -5,6 +5,7 @@ import passengerRouter from "./routes/passengerRoutes.js"
 import MapLocationRouter from "./routes/MapLocationRoutes.js";
 import feedbackRouter from "./routes/feedbackRoutes.js";
 import mongoose from "mongoose";
+import driverLocationRouter from "./routes/driverLocationRoutes.js";
 
 const app = express();
 
@@ -20,7 +21,8 @@ app.get("/", (request, response) => {
 app.use("/drivers", driverRouter);
 app.use("/passengers",passengerRouter);
 app.use("/map_location",MapLocationRouter);
-app.use("/feedback",feedbackRouter)
+app.use("/feedback",feedbackRouter);
+app.use("/driverLocation",driverLocationRouter);
 
 mongoose
   .connect(
